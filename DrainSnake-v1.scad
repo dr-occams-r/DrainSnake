@@ -22,24 +22,24 @@ include <BOSL2-local/std.scad>
 
 /* [Snake Body] */
 Notes              = "";
-SnakeLength        = 180; // [0:1:300]
-SnakeWidth         = 5;  // [0:0.1:50]
+SnakeLength        = 150; // [0:1:300]
+SnakeWidth         = 3;  // [0:0.1:50]
 // Core body thicker or else too floppy with TPU.
-BodyThickness     = 5;  // [0:0.1:50]
+BodyThickness      = 3;  // [0:0.1:50]
 
 /* [Spikes] */
 SpikeWidth         = 3;  // [0:1:50]
-SpikeProtrude      = 1.5;  // [0:0.1:50]
+SpikeProtrude      = 2;  // [0:0.1:50]
 // Will grab easier if spikes are thin
-SpikeBaseThickness = 2;  // [0:0.1:50]
+SpikeBaseThickness = 3;  // [0:0.1:50]
 SpikeAngle         = 45; // [0:1:90]
 SpikeGap           = 1;  // [0:1:50]
 
 /* [Handle] */
 HandleNeckLength   = 0; // [0:1:300]
-RingWidth          = 5;  // [0:1:50]
+RingWidth          = 3;  // [0:1:50]
 // Ring Inner Diameter
-RingDiameterOuter  = 60;  // [0:1:100]
+RingDiameterOuter  = 50;  // [0:1:100]
 RingOpeningAngle   = 30;  // [0:1:180]
 
 /* [General] */
@@ -79,7 +79,8 @@ RingRight = RingRadiusOuter + HandleNeckLength;
 RingRadiusInner = RingRadiusOuter - RingWidth;
 HandleLengthFull = HandleNeckLength + RingDiameterOuter - RingWidthHalf;
 RingAngleStart = -180 + RingOpeningAngle;
-RingAngleEnd = 180;
+// +0 Calculation to keep it out of customizer parameters
+RingAngleEnd = 180 + 0;
 
 FinalLength = SnakeLength + HandleLengthFull;
 echo("FinalLength:", FinalLength);
@@ -153,7 +154,6 @@ module Ring(){
       ring(
         ring_width=RingWidth,
         r=RingRadiusInner,
-        //angle=[RingAngleStart, 180],
         angle=[RingAngleStart,RingAngleEnd]
       );
     }
