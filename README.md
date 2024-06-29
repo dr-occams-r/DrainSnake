@@ -22,6 +22,13 @@ https://github.com/BelfrySCAD/BOSL2
 - Infill: 100%
 - Perimeter: 3 Lines
 
+### Longer than build plate width
+You can print the drain snakes that are longer than your build plate width by turning them diagonal (45 degrees), See screenshot below. 
+![](Images/PrusaSlicerViewLongDiagonal.png)
+
+ Change your infill angle from 45 degree to 0 degree when printing diagonal, See screenshot below. 
+![](Images/PrusaSlicerViewLongDiagonalInfill0Degree.jpg)
+
 ## Images
 ### Standard Drain Snake sizes in STL folder
 ![](Images/DrainSnakesTypical.jpg)
