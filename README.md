@@ -20,7 +20,7 @@ https://github.com/BelfrySCAD/BOSL2
 - Layer Height: 0.2mm Height
 - First Layer Width: 0.5mm
 - Infill: 100%
-- Perimeter: 3 Lines
+- Perimeter: 2 Lines
 
 ### Longer than build plate width
 You can print the drain snakes that are longer than your build plate width by turning them diagonal (45 degrees), See screenshot below. 
